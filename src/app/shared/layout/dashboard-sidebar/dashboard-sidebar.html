@@ -1,0 +1,43 @@
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-icon">
+      <svg lucideZap [size]="18" [strokeWidth]="2.4"></svg>
+    </div>
+
+    <div>
+      <h1>Dev News</h1>
+      <p>AI briefing</p>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav" aria-label="Main navigation">
+    <a routerLink="/overview" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <svg lucideLayoutDashboard [size]="18" [strokeWidth]="2"></svg>
+      Overview
+    </a>
+
+    <a routerLink="/daily" routerLinkActive="active">
+      <svg lucideArchive [size]="18" [strokeWidth]="2"></svg>
+      Daily Report
+    </a>
+
+<!--     <a href="#">
+      <svg lucideDatabase [size]="18" [strokeWidth]="2"></svg>
+      Sources
+    </a>
+
+    <a routerLink="/settings" routerLinkActive="active">
+      <svg lucideSettings [size]="18" [strokeWidth]="2"></svg>
+      Settings
+    </a> -->
+  </nav>
+
+  <footer class="archive-status">
+    <svg lucideFileJson [size]="18" [strokeWidth]="2"></svg>
+
+    <div>
+      <strong>Local JSON Archive</strong>
+      <p>Markdown + JSON output</p>
+    </div>
+  </footer>
+</aside>

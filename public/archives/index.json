@@ -1,0 +1,168 @@
+{
+  "generatedAt": "2026-06-01T10:00:00.000Z",
+  "availableDates": ["2026-06-01", "2026-05-31"],
+  "summary": {
+    "totalReports": 2,
+    "totalArticles": 27,
+    "highPriority": 13,
+    "mediumPriority": 9,
+    "lowPriority": 5,
+    "averageArticlesPerReport": 14,
+    "latestReportDate": "2026-06-01",
+    "dominantCategory": "Security",
+    "mostActiveSource": "InfoQ",
+    "highestRiskDay": "2026-06-01",
+    "topCategories": [
+      { "name": "Security", "count": 8 },
+      { "name": "Angular", "count": 5 },
+      { "name": "AI Tools", "count": 4 },
+      { "name": "Java", "count": 3 },
+      { "name": "DevOps", "count": 2 }
+    ],
+    "topSources": [
+      { "name": "InfoQ", "count": 7 },
+      { "name": "The Hacker News", "count": 6 },
+      { "name": "Angular Blog", "count": 4 },
+      { "name": "GitHub Blog", "count": 3 },
+      { "name": "Spring Blog", "count": 2 }
+    ]
+  },
+  "priorityTrend": [
+    {
+      "date": "2026-05-29",
+      "high": 4,
+      "medium": 3,
+      "low": 1
+    },
+    {
+      "date": "2026-05-30",
+      "high": 5,
+      "medium": 2,
+      "low": 2
+    },
+    {
+      "date": "2026-05-31",
+      "high": 3,
+      "medium": 4,
+      "low": 2
+    },
+    {
+      "date": "2026-06-01",
+      "high": 6,
+      "medium": 3,
+      "low": 2
+    }
+  ],
+  "reports": [
+    {
+      "date": "2026-06-01",
+      "generatedAt": "2026-06-01T08:00:00.000Z",
+      "totalArticles": 16,
+      "highPriority": 8,
+      "mediumPriority": 5,
+      "lowPriority": 3,
+      "topCategory": "Security",
+      "topSource": "InfoQ",
+      "topCategories": [
+        { "name": "Security", "count": 5 },
+        { "name": "Angular", "count": 3 },
+        { "name": "AI Tools", "count": 2 }
+      ],
+      "topSources": [
+        { "name": "InfoQ", "count": 4 },
+        { "name": "The Hacker News", "count": 3 },
+        { "name": "Angular Blog", "count": 2 }
+      ],
+      "topArticles": [
+        {
+          "title": "Critical vulnerability affects popular JavaScript build tools",
+          "url": "https://example.com/js-build-tools-vulnerability",
+          "source": "The Hacker News",
+          "category": "Security",
+          "priority": "high",
+          "score": 9,
+          "summary": "A newly disclosed vulnerability affects build pipelines used by modern JavaScript applications.",
+          "whyItMatters": "It may affect CI/CD security and dependency trust in frontend projects.",
+          "recommendedAction": "Review affected packages and update lockfiles."
+        },
+        {
+          "title": "Angular introduces improved developer experience for standalone apps",
+          "url": "https://example.com/angular-standalone-dx",
+          "source": "Angular Blog",
+          "category": "Angular",
+          "priority": "high",
+          "score": 8,
+          "summary": "Angular continues improving standalone workflows and modern application defaults.",
+          "whyItMatters": "It affects how new Angular projects should be structured.",
+          "recommendedAction": "Review the new recommendations and compare them with current project conventions."
+        },
+        {
+          "title": "AI coding tools add stronger repository-aware suggestions",
+          "url": "https://example.com/ai-coding-tools-repo-context",
+          "source": "InfoQ",
+          "category": "AI Tools",
+          "priority": "medium",
+          "score": 7,
+          "summary": "AI coding assistants are improving context awareness across larger repositories.",
+          "whyItMatters": "Better repository context can improve productivity in real projects.",
+          "recommendedAction": "Test repository-aware workflows in a small side project."
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "generatedAt": "2026-05-31T08:00:00.000Z",
+      "totalArticles": 11,
+      "highPriority": 5,
+      "mediumPriority": 4,
+      "lowPriority": 2,
+      "topCategory": "Java",
+      "topSource": "GitHub Blog",
+      "topCategories": [
+        { "name": "Java", "count": 3 },
+        { "name": "DevOps", "count": 2 },
+        { "name": "Security", "count": 3 }
+      ],
+      "topSources": [
+        { "name": "GitHub Blog", "count": 3 },
+        { "name": "Spring Blog", "count": 2 },
+        { "name": "InfoQ", "count": 3 }
+      ],
+      "topArticles": [
+        {
+          "title": "Spring ecosystem improves observability defaults",
+          "url": "https://example.com/spring-observability-defaults",
+          "source": "Spring Blog",
+          "category": "Java",
+          "priority": "high",
+          "score": 8,
+          "summary": "Spring projects continue improving observability and production diagnostics.",
+          "whyItMatters": "Observability is essential for backend services and microservices.",
+          "recommendedAction": "Review logging, metrics and tracing configuration in Spring Boot projects."
+        },
+        {
+          "title": "GitHub Actions adds new workflow security recommendations",
+          "url": "https://example.com/github-actions-security",
+          "source": "GitHub Blog",
+          "category": "DevOps",
+          "priority": "high",
+          "score": 8,
+          "summary": "GitHub publishes updated guidance for safer CI/CD workflows.",
+          "whyItMatters": "CI/CD pipelines are a common attack surface.",
+          "recommendedAction": "Audit workflow permissions and third-party actions."
+        },
+        {
+          "title": "PostgreSQL performance tips for growing applications",
+          "url": "https://example.com/postgresql-performance-tips",
+          "source": "InfoQ",
+          "category": "Database",
+          "priority": "medium",
+          "score": 7,
+          "summary": "A practical overview of indexing and query planning improvements for PostgreSQL apps.",
+          "whyItMatters": "Database performance often becomes a bottleneck as projects grow.",
+          "recommendedAction": "Review indexes and slow queries in development databases."
+        }
+      ]
+    }
+  ]
+}

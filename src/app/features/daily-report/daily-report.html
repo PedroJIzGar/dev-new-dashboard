@@ -1,0 +1,378 @@
+<app-dashboard-layout>
+  <app-dashboard-header
+    eyebrow="Daily Report"
+    title="Developer News Briefing"
+    subtitle="Review the AI-generated software development report by date."
+    [showDateSelector]="true"
+    [selectedDate]="selectedDate()"
+    [availableDates]="availableDates()"
+    (dateChanged)="onDateChange($event)"
+  />
+  @if (loading()) {
+    <section class="report-state-panel">
+      <div class="state-icon">⌛</div>
+      <h3>Loading report</h3>
+      <p>Fetching the selected daily briefing...</p>
+    </section>
+  } @else if (error()) {
+    <section class="report-state-panel error">
+      <div class="state-icon">⚠</div>
+
+      <h3>Unable to load report</h3>
+
+      <p>
+        {{ error() }}
+      </p>
+
+      <div class="state-actions">
+        <button type="button" (click)="onLoadLatestReport()">Load latest report</button>
+
+        <span> Or choose another date from the selector above. </span>
+      </div>
+    </section>
+  } @else if (archive(); as archiveData) {
+    <section class="summary-grid">
+      <article class="metric-card total">
+        <div class="metric-card-header">
+          <span class="metric-label">Total Articles</span>
+          <svg lucideFileJson [size]="18" [strokeWidth]="2"></svg>
+        </div>
+
+        <strong>{{ archiveData.totalArticles }}</strong>
+        <small>Analyzed today</small>
+      </article>
+
+      <article class="metric-card high">
+        <div class="metric-card-header">
+          <span class="metric-label">High Priority</span>
+          <svg lucideShieldAlert [size]="18" [strokeWidth]="2"></svg>
+        </div>
+
+        <strong>{{ archiveData.summary.highPriority }}</strong>
+        <small>Read first</small>
+      </article>
+
+      <article class="metric-card medium">
+        <div class="metric-card-header">
+          <span class="metric-label">Medium Priority</span>
+          <svg lucideTrendingUp [size]="18" [strokeWidth]="2"></svg>
+        </div>
+
+        <strong>{{ archiveData.summary.mediumPriority }}</strong>
+        <small>Useful context</small>
+      </article>
+
+      <article class="metric-card low">
+        <div class="metric-card-header">
+          <span class="metric-label">Low Priority</span>
+          <svg lucideGauge [size]="18" [strokeWidth]="2"></svg>
+        </div>
+
+        <strong>{{ archiveData.summary.lowPriority }}</strong>
+        <small>Background noise</small>
+      </article>
+    </section>
+
+    <section class="main-grid">
+      <section class="feed-column">
+        <section class="panel top-panel">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Priority Feed</p>
+              <h3>Top 3 articles</h3>
+            </div>
+
+            <span class="panel-badge">Score based ranking</span>
+          </div>
+
+          <div class="top-list">
+            @for (article of topArticles(); track article.url; let index = $index) {
+              <article class="top-card" [class.featured]="index === 0">
+                <div class="top-card-header">
+                  <div class="source-line">
+                    <span class="rank">#{{ index + 1 }}</span>
+                    <span>{{ article.source }}</span>
+                    <span>{{ article.category }}</span>
+                  </div>
+
+                  <div class="score-chip">Score: {{ article.score }}/10</div>
+                </div>
+
+                <h4>
+                  <a [href]="article.url" target="_blank" rel="noopener noreferrer">
+                    {{ article.title }}
+                  </a>
+                </h4>
+
+                <p class="article-summary">
+                  {{ article.summary }}
+                </p>
+
+                <div class="insight-grid">
+                  <div>
+                    <span>Why it matters</span>
+                    <p>{{ article.whyItMatters }}</p>
+                  </div>
+
+                  <div>
+                    <span>Recommended action</span>
+                    <p>{{ article.recommendedAction }}</p>
+                  </div>
+                </div>
+
+                <div class="card-actions">
+                  <a [href]="article.url" target="_blank" rel="noopener noreferrer">
+                    Open article
+                  </a>
+
+                  <button type="button">Review action</button>
+                </div>
+              </article>
+            }
+          </div>
+        </section>
+
+        <section class="panel articles-panel">
+          <div class="articles-header">
+            <div>
+              <p class="eyebrow">Article Archive</p>
+              <h3>All articles</h3>
+              <span>{{ totalFilteredArticles() }} results</span>
+            </div>
+
+            <div class="priority-filters">
+              <button
+                type="button"
+                [class.active]="selectedPriority() === 'all'"
+                (click)="onPriorityChange('all')"
+              >
+                All
+              </button>
+
+              <button
+                type="button"
+                [class.active]="selectedPriority() === 'high'"
+                (click)="onPriorityChange('high')"
+              >
+                High
+              </button>
+
+              <button
+                type="button"
+                [class.active]="selectedPriority() === 'medium'"
+                (click)="onPriorityChange('medium')"
+              >
+                Medium
+              </button>
+
+              <button
+                type="button"
+                [class.active]="selectedPriority() === 'low'"
+                (click)="onPriorityChange('low')"
+              >
+                Low
+              </button>
+            </div>
+          </div>
+
+          <div class="article-filter-panel">
+            <div class="search-box">
+              <svg lucideSearch class="search-icon" [size]="22" [strokeWidth]="2.2"></svg>
+
+              <input
+                type="search"
+                placeholder="Search articles..."
+                [value]="searchTerm()"
+                (input)="onSearchTermChange($event)"
+              />
+            </div>
+
+            <div class="select-filters">
+              <label>
+                Category
+
+                <select [value]="selectedCategory()" (change)="onCategoryChange($event)">
+                  <option value="all">All categories</option>
+
+                  @for (category of availableCategories(); track category) {
+                    <option [value]="category">{{ category }}</option>
+                  }
+                </select>
+              </label>
+
+              <label>
+                Source
+
+                <select [value]="selectedSource()" (change)="onSourceChange($event)">
+                  <option value="all">All sources</option>
+
+                  @for (source of availableSources(); track source) {
+                    <option [value]="source">{{ source }}</option>
+                  }
+                </select>
+              </label>
+
+              <label>
+                Min score
+
+                <select [value]="selectedMinScore() ?? 'any'" (change)="onMinScoreChange($event)">
+                  <option value="any">Any</option>
+                  <option value="7">7+</option>
+                  <option value="8">8+</option>
+                  <option value="9">9+</option>
+                </select>
+              </label>
+
+              @if (activeFiltersCount() > 0) {
+                <button class="clear-filters-button" type="button" (click)="onClearFilters()">
+                  Clear filters · {{ activeFiltersCount() }}
+                </button>
+              }
+            </div>
+          </div>
+
+          <div class="news-list">
+            @for (article of paginatedArticles(); track article.url) {
+              <article class="news-card">
+                <div class="news-card-main">
+                  <div>
+                    <div class="source-line">
+                      <span class="priority" [class]="article.priority">
+                        {{ article.priority }}
+                      </span>
+
+                      <span>{{ article.source }}</span>
+                      <span>{{ article.category }}</span>
+                    </div>
+
+                    <h4>
+                      <a [href]="article.url" target="_blank" rel="noopener noreferrer">
+                        {{ article.title }}
+                      </a>
+                    </h4>
+
+                    <p>{{ article.summary }}</p>
+                  </div>
+
+                  <strong class="score-number">{{ article.score }}/10</strong>
+                </div>
+
+                <div class="action-strip">
+                  <span>Action</span>
+                  <p>{{ article.recommendedAction }}</p>
+                </div>
+              </article>
+            } @empty {
+              <p class="empty-message">No articles found for the selected filter.</p>
+            }
+          </div>
+          @if (totalFilteredArticles() > pageSize()) {
+            <div class="pagination-bar">
+              <div class="pagination-info">Page {{ currentPage() }} of {{ totalPages() }}</div>
+
+              <div class="pagination-controls">
+                <button type="button" [disabled]="currentPage() === 1" (click)="onPreviousPage()">
+                  Previous
+                </button>
+
+                @for (page of [].constructor(totalPages()); track $index) {
+                  <button
+                    type="button"
+                    class="page-number"
+                    [class.active]="$index + 1 === currentPage()"
+                    (click)="onPageChange($index + 1)"
+                  >
+                    {{ $index + 1 }}
+                  </button>
+                }
+
+                <button
+                  type="button"
+                  [disabled]="currentPage() === totalPages()"
+                  (click)="onNextPage()"
+                >
+                  Next
+                </button>
+              </div>
+
+              <label class="page-size-selector">
+                Per page
+
+                <select [value]="pageSize()" (change)="onPageSizeChange($event)">
+                  <option [value]="5">5</option>
+                  <option [value]="10">10</option>
+                  <option [value]="20">20</option>
+                </select>
+              </label>
+            </div>
+          }
+        </section>
+      </section>
+
+      <aside class="right-panel">
+        <section class="panel compact-panel">
+          <p class="eyebrow">Priority Distribution</p>
+          <h3>Daily focus</h3>
+
+          <div class="distribution-list">
+            <div>
+              <span>High</span>
+              <strong>{{ archiveData.summary.highPriority }}</strong>
+            </div>
+
+            <div class="bar high">
+              <span></span>
+            </div>
+
+            <div>
+              <span>Medium</span>
+              <strong>{{ archiveData.summary.mediumPriority }}</strong>
+            </div>
+
+            <div class="bar medium">
+              <span></span>
+            </div>
+
+            <div>
+              <span>Low</span>
+              <strong>{{ archiveData.summary.lowPriority }}</strong>
+            </div>
+
+            <div class="bar low">
+              <span></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel compact-panel">
+          <p class="eyebrow">Top Categories</p>
+          <h3>Technical areas</h3>
+
+          <ul class="tag-list">
+            @for (category of archiveData.summary.topCategories; track category.name) {
+              <li>
+                <span>#{{ category.name }}</span>
+                <strong>{{ category.count }}</strong>
+              </li>
+            }
+          </ul>
+        </section>
+
+        <section class="panel compact-panel">
+          <p class="eyebrow">Top Sources</p>
+          <h3>RSS origin</h3>
+
+          <ul class="source-list">
+            @for (source of archiveData.summary.topSources; track source.name) {
+              <li>
+                <span class="source-dot"></span>
+                <span>{{ source.name }}</span>
+                <strong>{{ source.count }}</strong>
+              </li>
+            }
+          </ul>
+        </section>
+      </aside>
+    </section>
+  }
+</app-dashboard-layout>

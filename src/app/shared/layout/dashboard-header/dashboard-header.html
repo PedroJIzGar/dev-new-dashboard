@@ -1,0 +1,27 @@
+<header class="dashboard-header">
+  <div>
+    <p class="eyebrow">Daily Report</p>
+    <h2>Developer News Briefing</h2>
+    <p class="subtitle">Review the AI-generated software development report by date.</p>
+  </div>
+
+  @if (showDateSelector()) {
+    <div class="header-actions">
+      <div class="date-selector">
+        <svg lucideCalendarDays [size]="16" [strokeWidth]="2"></svg>
+
+        <select
+          [value]="selectedDate() ?? ''"
+          (change)="onDateChange($event)"
+          aria-label="Select report date"
+        >
+          @for (date of availableDates(); track date) {
+            <option [value]="date">
+              {{ date }}
+            </option>
+          }
+        </select>
+      </div>
+    </div>
+  }
+</header>

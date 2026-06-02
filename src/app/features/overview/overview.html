@@ -1,0 +1,221 @@
+<app-dashboard-layout>
+  <app-dashboard-header
+    eyebrow="Overview"
+    title="Historical News Intelligence"
+    subtitle="Track trends, priorities and top software development stories over time."
+  />
+
+  @if (loading()) {
+    <section class="overview-state-panel">
+      <div class="state-icon">⌛</div>
+      <h3>Loading overview</h3>
+      <p>Reading the historical archive index...</p>
+    </section>
+  } @else if (error()) {
+    <section class="overview-state-panel error">
+      <div class="state-icon">⚠</div>
+      <h3>Unable to load overview</h3>
+      <p>{{ error() }}</p>
+    </section>
+  } @else if (indexSummary(); as summary) {
+    <section class="overview-hero-grid">
+      @if (latestReport(); as report) {
+        <article class="latest-report-card">
+          <div class="latest-report-header">
+            <div>
+              <p class="eyebrow">Latest Report</p>
+              <h3>{{ report.date }}</h3>
+            </div>
+
+            <span class="status-pill">Status · OK</span>
+          </div>
+
+          <div class="latest-report-stats">
+            <div>
+              <span>Total Articles</span>
+              <strong>{{ report.totalArticles }}</strong>
+            </div>
+
+            <div>
+              <span>High Priority</span>
+              <strong>{{ report.highPriority }}</strong>
+            </div>
+
+            <div>
+              <span>Top Category</span>
+              <strong>{{ report.topCategory ?? '—' }}</strong>
+            </div>
+          </div>
+
+          <div class="latest-report-footer">
+            <span>Top Source · {{ report.topSource ?? '—' }}</span>
+
+            <a [routerLink]="['/daily', report.date]" class="primary-action">
+              Open latest report
+            </a>
+          </div>
+        </article>
+      }
+
+      <section class="overview-summary-grid">
+        <article class="overview-metric-card">
+          <div class="metric-card-header">
+            <span class="metric-label">Reports Generated</span>
+            <svg lucideArchive [size]="18" [strokeWidth]="2"></svg>
+          </div>
+
+          <strong>{{ summary.totalReports }}</strong>
+          <small>Generated briefings</small>
+        </article>
+
+        <article class="overview-metric-card">
+          <div class="metric-card-header">
+            <span class="metric-label">Total Articles</span>
+            <svg lucideNewspaper [size]="18" [strokeWidth]="2"></svg>
+          </div>
+
+          <strong>{{ summary.totalArticles }}</strong>
+          <small>Total analyzed</small>
+        </article>
+
+        <article class="overview-metric-card high">
+          <div class="metric-card-header">
+            <span class="metric-label">High Priority</span>
+            <svg lucideShieldAlert [size]="18" [strokeWidth]="2"></svg>
+          </div>
+
+          <strong>{{ summary.highPriority }}</strong>
+          <small>Across all reports</small>
+        </article>
+
+        <article class="overview-metric-card">
+          <div class="metric-card-header">
+            <span class="metric-label">Avg / Report</span>
+            <svg lucideTrendingUp [size]="18" [strokeWidth]="2"></svg>
+          </div>
+
+          <strong>{{ summary.averageArticlesPerReport }}</strong>
+          <small>Articles per briefing</small>
+        </article>
+      </section>
+    </section>
+
+    <section class="overview-grid">
+      <div class="report-timeline">
+        @for (report of reports(); track report.date) {
+          <article class="daily-summary-card">
+            <div class="timeline-marker"></div>
+
+            <div class="daily-summary-content">
+              <div class="daily-summary-header">
+                <div>
+                  <p class="report-date">
+                    {{ report.date }}
+                  </p>
+
+                  <h4>{{ report.totalArticles }} articles analyzed</h4>
+                </div>
+
+                <div class="daily-summary-actions">
+                  <div class="daily-priority-row">
+                    <span class="priority high">High: {{ report.highPriority }}</span>
+                    <span class="priority medium">Med: {{ report.mediumPriority }}</span>
+                    <span class="priority low">Low: {{ report.lowPriority }}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="top-articles-table">
+                @for (article of report.topArticles; track article.url; let index = $index) {
+                  <a
+                    class="mini-article"
+                    [href]="article.url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span class="article-rank">
+                      {{ (index + 1).toString().padStart(2, '0') }}
+                    </span>
+
+                    <strong>{{ article.title }}</strong>
+
+                    <span class="article-category">{{ article.category }}</span>
+
+                    <span class="article-source">{{ article.source }}</span>
+
+                    <span class="article-score">{{ article.score }}</span>
+                  </a>
+                }
+              </div>
+
+              <a [routerLink]="['/daily', report.date]" class="open-report-link"> Open report </a>
+            </div>
+          </article>
+        } @empty {
+          <p class="empty-message">No historical reports available yet.</p>
+        }
+      </div>
+
+      <aside class="overview-side-panel">
+        <section class="panel compact-panel trend-panel">
+          <div class="trend-widget-header">
+            <div>
+              <p class="eyebrow">Priority Trend</p>
+              <h3>Last reports</h3>
+            </div>
+
+            <span class="trend-status">Last 4</span>
+          </div>
+
+          <div class="mini-chart-box">
+            @if (hasPriorityTrendData()) {
+              <canvas
+                baseChart
+                [data]="priorityTrendChartData()"
+                [options]="priorityTrendChartOptions"
+                [type]="priorityTrendChartType"
+              ></canvas>
+            } @else {
+              <p class="empty-message">No priority trend data available yet.</p>
+            }
+          </div>
+        </section>
+
+        <section class="panel compact-panel">
+          <p class="eyebrow">Top Historical Categories</p>
+          <h3>Historical topics</h3>
+
+          <ul class="tag-list">
+            @for (category of historicalTopCategories(); track category.name) {
+              <li>
+                <span>#{{ category.name }}</span>
+                <strong>{{ category.count }}</strong>
+              </li>
+            }
+          </ul>
+        </section>
+
+        <section class="panel compact-panel">
+          <p class="eyebrow">Top Historical Sources</p>
+          <h3>RSS origin</h3>
+
+          <ul class="source-list">
+            @for (source of historicalTopSources(); track source.name) {
+              <li>
+                <span class="source-dot"></span>
+                <span>{{ source.name }}</span>
+                <strong>{{ source.count }}</strong>
+              </li>
+            }
+          </ul>
+        </section>
+      </aside>
+    </section>
+  } @else {
+    <section class="overview-state-panel">
+      <div class="state-icon">∅</div>
+      <h3>No reports yet</h3>
+      <p>Run the Dev News Agent to generate your first briefing.</p>
+    </section>
+  }
+</app-dashboard-layout>

@@ -1,0 +1,209 @@
+{
+  "date": "2026-06-01",
+  "generatedAt": "2026-06-01T10:09:03.716Z",
+  "totalArticles": 15,
+  "summary": {
+    "highPriority": 10,
+    "mediumPriority": 4,
+    "lowPriority": 1,
+    "topCategories": [
+      {
+        "name": "Seguridad",
+        "count": 10
+      },
+      {
+        "name": "IA para Desarrolladores",
+        "count": 2
+      },
+      {
+        "name": "Herramientas de Desarrollo",
+        "count": 2
+      },
+      {
+        "name": "Frontend",
+        "count": 1
+      }
+    ],
+    "topSources": [
+      {
+        "name": "The Hacker News",
+        "count": 9
+      },
+      {
+        "name": "GitHub Blog",
+        "count": 4
+      },
+      {
+        "name": "Angular Blog",
+        "count": 2
+      }
+    ]
+  },
+  "articles": [
+    {
+      "title": "PAN-OS GlobalProtect Authentication Bypass (CVE-2026-0257) Bajo Explotación Activa",
+      "url": "https://thehackernews.com/2026/05/pan-os-globalprotect-authentication.html",
+      "source": "The Hacker News",
+      "category": "Seguridad",
+      "priority": "high",
+      "score": 10,
+      "summary": "Una vulnerabilidad de bypass de autenticación en PAN-OS GlobalProtect (CVE-2026-0257) está siendo explotada activamente.",
+      "whyItMatters": "Las vulnerabilidades críticas que son explotadas activamente representan un riesgo inmediato para la seguridad de las redes corporativas y los datos. Es crucial estar informado para tomar medidas preventivas.",
+      "recommendedAction": "Asegúrate de que tus sistemas que utilizan PAN-OS GlobalProtect estén actualizados y parcheados para mitigar esta vulnerabilidad."
+    },
+    {
+      "title": "Claude Mythos AI encuentra 10,000 fallos de alta severidad en software de uso generalizado",
+      "url": "https://thehackernews.com/2026/05/claude-mythos-ai-finds-10000-high.html",
+      "source": "The Hacker News",
+      "category": "IA para Desarrolladores",
+      "priority": "high",
+      "score": 10,
+      "summary": "Un proyecto de IA de Anthropic ha descubierto más de 10,000 vulnerabilidades críticas en software importante a nivel mundial.",
+      "whyItMatters": "Demuestra el poder de la IA para mejorar la seguridad del software a gran escala. Esto puede acelerar la identificación y corrección de fallos, haciendo el ecosistema digital más seguro.",
+      "recommendedAction": "Presta atención a las herramientas y proyectos que utilizan IA para la detección de vulnerabilidades, ya que pueden ser cruciales para la seguridad de las aplicaciones que utilizas y desarrollas."
+    },
+    {
+      "title": "LiteSpeed cPanel Plugin CVE-2026-48172 Explotado para Ejecutar Scripts como Root",
+      "url": "https://thehackernews.com/2026/05/litespeed-cpanel-plugin-cve-2026-48172.html",
+      "source": "The Hacker News",
+      "category": "Seguridad",
+      "priority": "high",
+      "score": 10,
+      "summary": "Una vulnerabilidad crítica (CVE-2026-48172) en el plugin LiteSpeed cPanel está siendo explotada para obtener privilegios de root.",
+      "whyItMatters": "Este tipo de vulnerabilidades de escalada de privilegios son extremadamente peligrosas, permitiendo a los atacantes tomar control total de los sistemas afectados. La explotación activa requiere atención inmediata.",
+      "recommendedAction": "Verifica si utilizas el plugin LiteSpeed cPanel y aplica las actualizaciones de seguridad correspondientes de inmediato para prevenir accesos no autorizados."
+    },
+    {
+      "title": "Drupal Core SQL Injection Bug Activamente Explotado, Añadido al KEV de CISA",
+      "url": "https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html",
+      "source": "The Hacker News",
+      "category": "Seguridad",
+      "priority": "high",
+      "score": 10,
+      "summary": "Una vulnerabilidad crítica de inyección SQL en Drupal Core (CVE-2026-9082) está siendo explotada activamente y ha sido añadida al catálogo KEV de CISA.",
+      "whyItMatters": "Las vulnerabilidades de inyección SQL son comunes pero muy peligrosas, y su explotación activa en un CMS popular como Drupal requiere una acción inmediata para proteger sitios web.",
+      "recommendedAction": "Si administras sitios web basados en Drupal, aplica los parches de seguridad para Drupal Core lo antes posible y revisa tus sistemas en busca de signos de compromiso."
+    },
+    {
+      "title": "Security Advisory: Addressing Recent Vulnerabilities in Angular",
+      "url": "https://blog.angular.dev/security-advisory-addressing-recent-vulnerabilities-in-angular-c2656249b799?source=rss----447683c3d9a3---4",
+      "source": "Angular Blog",
+      "category": "Seguridad",
+      "priority": "high",
+      "score": 9,
+      "summary": "Este artículo detalla vulnerabilidades de seguridad recientes descubiertas en Angular y cómo abordarlas.",
+      "whyItMatters": "Mantenerse al día con las vulnerabilidades de seguridad en frameworks de frontend como Angular es crucial para proteger tus aplicaciones de posibles ataques y asegurar los datos de los usuarios.",
+      "recommendedAction": "Revisa las vulnerabilidades mencionadas y aplica las actualizaciones o parches correspondientes a tus proyectos de Angular."
+    },
+    {
+      "title": "GitHub para Principiantes: Primeros pasos con Git y GitHub en VS Code",
+      "url": "https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-git-and-github-in-vs-code/",
+      "source": "GitHub Blog",
+      "category": "Herramientas de Desarrollo",
+      "priority": "high",
+      "score": 9,
+      "summary": "Una guía para que los principiantes aprendan a usar Git y GitHub integrados con Visual Studio Code para la gestión de proyectos.",
+      "whyItMatters": "Dominar Git y GitHub es fundamental para cualquier desarrollador de software, y aprender a hacerlo eficientemente dentro de VS Code mejora la productividad.",
+      "recommendedAction": "Si eres nuevo en Git y GitHub, o quieres mejorar tu flujo de trabajo en VS Code, revisa esta guía."
+    },
+    {
+      "title": "Elevando el nivel: Calidad, responsabilidad compartida y el futuro del programa de recompensas por errores de GitHub",
+      "url": "https://github.blog/security/raising-the-bar-quality-shared-responsibility-and-the-future-of-githubs-bug-bounty-program/",
+      "source": "GitHub Blog",
+      "category": "Seguridad",
+      "priority": "high",
+      "score": 9,
+      "summary": "GitHub actualiza los estándares de su programa de recompensas por errores para enfocarse en la calidad, la responsabilidad compartida y mejores recompensas.",
+      "whyItMatters": "Las mejoras en los programas de bug bounty son esenciales para la seguridad del ecosistema de software. Comprender estos cambios ayuda a los desarrolladores a contribuir a un entorno más seguro.",
+      "recommendedAction": "Revisa los nuevos estándares del programa de bug bounty de GitHub si participas o estás interesado en reportar vulnerabilidades."
+    },
+    {
+      "title": "Las recomendaciones de chatbots de IA redirigen a los usuarios a sitios de malware de criptojacking",
+      "url": "https://thehackernews.com/2026/05/ai-chatbot-recommendations-redirect.html",
+      "source": "The Hacker News",
+      "category": "Seguridad",
+      "priority": "high",
+      "score": 9,
+      "summary": "Se ha descubierto una campaña de criptojacking que utiliza las recomendaciones de chatbots de IA para dirigir a los usuarios a sitios maliciosos.",
+      "whyItMatters": "Este es un ejemplo preocupante de cómo las herramientas de IA pueden ser malutilizadas para la distribución de malware, afectando la confianza en las recomendaciones de chatbots.",
+      "recommendedAction": "Sé extremadamente cauto con las recomendaciones de descargas o enlaces provenientes de chatbots de IA, y verifica siempre la legitimidad de los sitios web antes de interactuar."
+    },
+    {
+      "title": "Lazarus despliega RemotePE RAT con solo memoria contra firmas financieras y de criptomonedas",
+      "url": "https://thehackernews.com/2026/05/lazarus-deploys-remotepe-memory-only.html",
+      "source": "The Hacker News",
+      "category": "Seguridad",
+      "priority": "high",
+      "score": 9,
+      "summary": "El grupo Lazarus está utilizando un malware avanzado (RemotePE) que opera solo en memoria contra organizaciones financieras y de criptomonedas.",
+      "whyItMatters": "El uso de malware avanzado y sigiloso por parte de grupos APT como Lazarus representa una amenaza seria para las instituciones financieras. Conocer estas tácticas es vital para la defensa.",
+      "recommendedAction": "Fortalece las defensas de seguridad en sistemas que manejan información financiera o criptomonedas, prestando especial atención a la detección de malware avanzado y técnicas de evasión."
+    },
+    {
+      "title": "CISA Añade Vulnerabilidades Explotadas en Langflow y Trend Micro Apex One a KEV",
+      "url": "https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html",
+      "source": "The Hacker News",
+      "category": "Seguridad",
+      "priority": "high",
+      "score": 9,
+      "summary": "CISA ha añadido vulnerabilidades en Langflow (CVE-2025-34291) y Trend Micro Apex One a su catálogo de vulnerabilidades explotadas activamente (KEV).",
+      "whyItMatters": "Las vulnerabilidades incluidas en el catálogo KEV de CISA son una prioridad alta ya que se sabe que están siendo explotadas. Ignorarlas puede llevar a brechas de seguridad significativas.",
+      "recommendedAction": "Prioriza la actualización y el parcheo de Langflow y Trend Micro Apex One si los utilizas en tu infraestructura para mitigar los riesgos asociados a estas vulnerabilidades activamente explotadas."
+    },
+    {
+      "title": "Lleva tus sesiones locales de GitHub a cualquier lugar",
+      "url": "https://github.blog/news-insights/product-news/take-your-local-github-sessions-anywhere/",
+      "source": "GitHub Blog",
+      "category": "Herramientas de Desarrollo",
+      "priority": "medium",
+      "score": 8,
+      "summary": "GitHub Copilot ahora permite controlar sesiones de codificación de forma remota desde VS Code o la app móvil de GitHub.",
+      "whyItMatters": "Esta funcionalidad mejora la flexibilidad y la productividad para desarrolladores que trabajan en diferentes entornos o de forma remota, aprovechando la IA de GitHub Copilot.",
+      "recommendedAction": "Si utilizas GitHub Copilot, investiga cómo aprovechar el control remoto de sesiones para una mayor flexibilidad en tu flujo de trabajo."
+    },
+    {
+      "title": "Angular 21: Internal Mechanics, ARIA, y Coding impulsado por IA",
+      "url": "https://blog.angular.dev/angular-21-internal-mechanics-aria-and-ai-powered-coding-eefc4b05ddb6?source=rss----447683c3d9a3---4",
+      "source": "Angular Blog",
+      "category": "Frontend",
+      "priority": "medium",
+      "score": 7,
+      "summary": "La versión 21 de Angular introduce mejoras internas, soporte para ARIA y explora el uso de IA para potenciar el desarrollo.",
+      "whyItMatters": "Conocer las nuevas características de Angular, especialmente aquellas relacionadas con la accesibilidad (ARIA) y la integración de IA, puede mejorar la calidad y eficiencia del desarrollo frontend.",
+      "recommendedAction": "Explora las notas de la versión de Angular 21 y considera cómo las nuevas características de IA y ARIA podrían beneficiar tus proyectos."
+    },
+    {
+      "title": "GitHub reconocido como Líder en el Cuadrante Mágico de Gartner para Agentes de Codificación de IA Empresarial",
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-recognized-as-a-leader-in-the-gartner-magic-quadrant-for-enterprise-ai-coding-agents-for-the-third-year-in-a-row/",
+      "source": "GitHub Blog",
+      "category": "IA para Desarrolladores",
+      "priority": "medium",
+      "score": 7,
+      "summary": "GitHub ha sido reconocido por tercer año consecutivo como líder en el Cuadrante Mágico de Gartner para Agentes de Codificación de IA Empresarial.",
+      "whyItMatters": "Este reconocimiento subraya el avance de GitHub en el espacio de la IA para desarrolladores, destacando la importancia de herramientas como GitHub Copilot en el futuro del desarrollo de software.",
+      "recommendedAction": "Considera explorar o mejorar tu uso de herramientas de IA para desarrolladores como GitHub Copilot, dada su creciente importancia en la industria."
+    },
+    {
+      "title": "Nuevo GREYVIBE, vinculado a Rusia, ataca a Ucrania con ciberataques impulsados por IA",
+      "url": "https://thehackernews.com/2026/05/new-russian-linked-greyvibe-targets.html",
+      "source": "The Hacker News",
+      "category": "Seguridad",
+      "priority": "medium",
+      "score": 7,
+      "summary": "Un nuevo actor de amenazas, GREYVIBE, está llevando a cabo ciberataques contra Ucrania utilizando IA, con posibles vínculos estatales.",
+      "whyItMatters": "La convergencia de la IA y la ciberdelincuencia representa una amenaza creciente. Comprender estas tácticas ayuda a anticipar y defenderse contra ataques más sofisticados.",
+      "recommendedAction": "Mantente informado sobre las tendencias en ciberataques y considera medidas de seguridad mejoradas, especialmente si operas en regiones o sectores geopolíticamente sensibles."
+    },
+    {
+      "title": "Operador de Botnet Kimwolf DDoS Arrestado en Canadá por Ataques DDoS-for-Hire",
+      "url": "https://thehackernews.com/2026/05/kimwolf-ddos-botnet-operator-arrested.html",
+      "source": "The Hacker News",
+      "category": "Seguridad",
+      "priority": "low",
+      "score": 5,
+      "summary": "Un operador canadiense de una botnet DDoS (Kimwolf) ha sido arrestado, acusado de ofrecer servicios de ataque DDoS.",
+      "whyItMatters": "Si bien la noticia trata sobre la aplicación de la ley contra el cibercrimen, el conocimiento de cómo operan estas botnets puede ser útil para entender el panorama de amenazas y las defensas necesarias.",
+      "recommendedAction": "Considera revisar tus medidas de protección contra ataques DDoS para asegurar la resiliencia de tus servicios."
+    }
+  ]
+}
