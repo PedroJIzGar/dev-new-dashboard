@@ -1,166 +1,207 @@
 {
-  "generatedAt": "2026-06-01T10:00:00.000Z",
-  "availableDates": ["2026-06-01", "2026-05-31"],
+  "generatedAt": "2026-06-02T10:33:14.989Z",
+  "availableDates": [
+    "2026-06-02",
+    "2026-06-01"
+  ],
   "summary": {
     "totalReports": 2,
-    "totalArticles": 27,
-    "highPriority": 13,
-    "mediumPriority": 9,
-    "lowPriority": 5,
-    "averageArticlesPerReport": 14,
-    "latestReportDate": "2026-06-01",
-    "dominantCategory": "Security",
-    "mostActiveSource": "InfoQ",
+    "totalArticles": 30,
+    "highPriority": 17,
+    "mediumPriority": 12,
+    "lowPriority": 1,
+    "averageArticlesPerReport": 15,
+    "latestReportDate": "2026-06-02",
+    "dominantCategory": "AI",
+    "mostActiveSource": "Stack Overflow Blog",
     "highestRiskDay": "2026-06-01",
     "topCategories": [
-      { "name": "Security", "count": 8 },
-      { "name": "Angular", "count": 5 },
-      { "name": "AI Tools", "count": 4 },
-      { "name": "Java", "count": 3 },
-      { "name": "DevOps", "count": 2 }
+      {
+        "name": "AI",
+        "count": 13
+      },
+      {
+        "name": "Seguridad",
+        "count": 10
+      },
+      {
+        "name": "IA para Desarrolladores",
+        "count": 4
+      },
+      {
+        "name": "Security",
+        "count": 1
+      },
+      {
+        "name": "Developer Tools",
+        "count": 1
+      }
     ],
     "topSources": [
-      { "name": "InfoQ", "count": 7 },
-      { "name": "The Hacker News", "count": 6 },
-      { "name": "Angular Blog", "count": 4 },
-      { "name": "GitHub Blog", "count": 3 },
-      { "name": "Spring Blog", "count": 2 }
+      {
+        "name": "Stack Overflow Blog",
+        "count": 20
+      },
+      {
+        "name": "The Hacker News",
+        "count": 7
+      },
+      {
+        "name": "Krebs on Security",
+        "count": 3
+      }
     ]
   },
   "priorityTrend": [
     {
-      "date": "2026-05-29",
-      "high": 4,
-      "medium": 3,
-      "low": 1
-    },
-    {
-      "date": "2026-05-30",
-      "high": 5,
-      "medium": 2,
-      "low": 2
-    },
-    {
-      "date": "2026-05-31",
-      "high": 3,
-      "medium": 4,
-      "low": 2
-    },
-    {
       "date": "2026-06-01",
-      "high": 6,
-      "medium": 3,
-      "low": 2
+      "high": 9,
+      "medium": 6,
+      "low": 0
+    },
+    {
+      "date": "2026-06-02",
+      "high": 8,
+      "medium": 6,
+      "low": 1
     }
   ],
   "reports": [
     {
-      "date": "2026-06-01",
-      "generatedAt": "2026-06-01T08:00:00.000Z",
-      "totalArticles": 16,
+      "date": "2026-06-02",
+      "generatedAt": "2026-06-02T10:33:14.980Z",
+      "totalArticles": 15,
       "highPriority": 8,
-      "mediumPriority": 5,
-      "lowPriority": 3,
-      "topCategory": "Security",
-      "topSource": "InfoQ",
+      "mediumPriority": 6,
+      "lowPriority": 1,
+      "topCategory": "AI",
+      "topSource": "Stack Overflow Blog",
       "topCategories": [
-        { "name": "Security", "count": 5 },
-        { "name": "Angular", "count": 3 },
-        { "name": "AI Tools", "count": 2 }
+        {
+          "name": "AI",
+          "count": 13
+        },
+        {
+          "name": "Security",
+          "count": 1
+        },
+        {
+          "name": "Developer Tools",
+          "count": 1
+        }
       ],
       "topSources": [
-        { "name": "InfoQ", "count": 4 },
-        { "name": "The Hacker News", "count": 3 },
-        { "name": "Angular Blog", "count": 2 }
+        {
+          "name": "Stack Overflow Blog",
+          "count": 15
+        }
       ],
       "topArticles": [
         {
-          "title": "Critical vulnerability affects popular JavaScript build tools",
-          "url": "https://example.com/js-build-tools-vulnerability",
-          "source": "The Hacker News",
-          "category": "Security",
+          "title": "Dispatches from O'Reilly: The accidental orchestrator",
+          "url": "https://stackoverflow.blog/2026/05/22/dispatches-from-o-reilly-the-accidental-orchestrator/",
+          "source": "Stack Overflow Blog",
+          "category": "AI",
           "priority": "high",
           "score": 9,
-          "summary": "A newly disclosed vulnerability affects build pipelines used by modern JavaScript applications.",
-          "whyItMatters": "It may affect CI/CD security and dependency trust in frontend projects.",
-          "recommendedAction": "Review affected packages and update lockfiles."
+          "summary": "Artículo que explora los experimentos en ingeniería de agentes y el desarrollo impulsado por IA.",
+          "whyItMatters": "Este artículo aborda las últimas tendencias en el desarrollo impulsado por IA, específicamente en la ingeniería de agentes, un área de rápido crecimiento que podría transformar la forma en que se crea el software. Es relevante para los desarrolladores interesados en las nuevas herramientas y metodologías.",
+          "recommendedAction": "Leer el artículo para entender las implicaciones de la ingeniería de agentes y cómo la IA está cambiando el panorama del desarrollo de software."
         },
         {
-          "title": "Angular introduces improved developer experience for standalone apps",
-          "url": "https://example.com/angular-standalone-dx",
-          "source": "Angular Blog",
-          "category": "Angular",
+          "title": "Coding agents are giving everyone decision fatigue",
+          "url": "https://stackoverflow.blog/2026/05/21/coding-agents-are-giving-everyone-decision-fatigue/",
+          "source": "Stack Overflow Blog",
+          "category": "AI",
           "priority": "high",
           "score": 8,
-          "summary": "Angular continues improving standalone workflows and modern application defaults.",
-          "whyItMatters": "It affects how new Angular projects should be structured.",
-          "recommendedAction": "Review the new recommendations and compare them with current project conventions."
+          "summary": "Analiza cómo los agentes de codificación, a pesar de sus beneficios, pueden generar fatiga en la toma de decisiones para los desarrolladores, haciendo el día a día más intenso.",
+          "whyItMatters": "Plantea un desafío importante en la adopción de herramientas de IA: la sobrecarga de decisiones. Comprender cómo gestionar esta fatiga es crucial para mantener la productividad y el bienestar de los desarrolladores a medida que estas herramientas se vuelven más comunes.",
+          "recommendedAction": "Explorar las estrategias para mitigar la fatiga de decisión al trabajar con agentes de codificación y evaluar su impacto en el flujo de trabajo personal."
         },
         {
-          "title": "AI coding tools add stronger repository-aware suggestions",
-          "url": "https://example.com/ai-coding-tools-repo-context",
-          "source": "InfoQ",
-          "category": "AI Tools",
-          "priority": "medium",
-          "score": 7,
-          "summary": "AI coding assistants are improving context awareness across larger repositories.",
-          "whyItMatters": "Better repository context can improve productivity in real projects.",
-          "recommendedAction": "Test repository-aware workflows in a small side project."
+          "title": "Your fridge could be a threat to national security",
+          "url": "https://stackoverflow.blog/2026/05/19/your-fridge-could-be-a-threat-to-national-security/",
+          "source": "Stack Overflow Blog",
+          "category": "Security",
+          "priority": "high",
+          "score": 8,
+          "summary": "Informa sobre el reporte de Crowdstrike que identifica amenazas a la seguridad nacional provenientes de dispositivos IoT, incluyendo electrodomésticos inteligentes.",
+          "whyItMatters": "Este artículo es vital para entender el panorama de amenazas de seguridad en el mundo conectado. La proliferación de dispositivos IoT y su potencial para ser puntos de entrada a redes críticas o para ser utilizados en ataques a gran escala es una preocupación creciente.",
+          "recommendedAction": "Prestar atención a las tendencias en seguridad de IoT y considerar las implicaciones para la seguridad de redes corporativas y personales."
         }
       ]
     },
     {
-      "date": "2026-05-31",
-      "generatedAt": "2026-05-31T08:00:00.000Z",
-      "totalArticles": 11,
-      "highPriority": 5,
-      "mediumPriority": 4,
-      "lowPriority": 2,
-      "topCategory": "Java",
-      "topSource": "GitHub Blog",
+      "date": "2026-06-01",
+      "generatedAt": "2026-06-01T15:15:14.944Z",
+      "totalArticles": 15,
+      "highPriority": 9,
+      "mediumPriority": 6,
+      "lowPriority": 0,
+      "topCategory": "Seguridad",
+      "topSource": "The Hacker News",
       "topCategories": [
-        { "name": "Java", "count": 3 },
-        { "name": "DevOps", "count": 2 },
-        { "name": "Security", "count": 3 }
+        {
+          "name": "Seguridad",
+          "count": 10
+        },
+        {
+          "name": "IA para Desarrolladores",
+          "count": 4
+        },
+        {
+          "name": "Java/Spring Boot",
+          "count": 1
+        }
       ],
       "topSources": [
-        { "name": "GitHub Blog", "count": 3 },
-        { "name": "Spring Blog", "count": 2 },
-        { "name": "InfoQ", "count": 3 }
+        {
+          "name": "The Hacker News",
+          "count": 7
+        },
+        {
+          "name": "Stack Overflow Blog",
+          "count": 5
+        },
+        {
+          "name": "Krebs on Security",
+          "count": 3
+        }
       ],
       "topArticles": [
         {
-          "title": "Spring ecosystem improves observability defaults",
-          "url": "https://example.com/spring-observability-defaults",
-          "source": "Spring Blog",
-          "category": "Java",
+          "title": "Ghostwriter Targets Ukraine Government Entities with Prometheus Phishing Malware",
+          "url": "https://thehackernews.com/2026/05/ghostwriter-targets-ukraine-government.html",
+          "source": "The Hacker News",
+          "category": "Seguridad",
           "priority": "high",
-          "score": 8,
-          "summary": "Spring projects continue improving observability and production diagnostics.",
-          "whyItMatters": "Observability is essential for backend services and microservices.",
-          "recommendedAction": "Review logging, metrics and tracing configuration in Spring Boot projects."
+          "score": 9,
+          "summary": "Actores maliciosos alineados con Bielorrusia, conocidos como Ghostwriter, están utilizando señuelos relacionados con Prometheus (una plataforma de aprendizaje online ucraniana) para atacar a organizaciones gubernamentales en Ucrania. El método implica el envío de correos electrónicos de phishing a entidades gubernamentales utilizando cuentas comprometidas.",
+          "whyItMatters": "Este ataque destaca la sofisticación y las tácticas de ingeniería social empleadas por actores de amenazas patrocinados por estados, lo que representa un riesgo directo para la seguridad de las infraestructuras críticas y los datos gubernamentales.",
+          "recommendedAction": "Mantente alerta ante correos electrónicos de phishing sospechosos, especialmente aquellos que intentan hacerse pasar por plataformas legítimas o que provienen de fuentes inesperadas. Verifica siempre la autenticidad de las comunicaciones antes de hacer clic en enlaces o descargar archivos adjuntos."
         },
         {
-          "title": "GitHub Actions adds new workflow security recommendations",
-          "url": "https://example.com/github-actions-security",
-          "source": "GitHub Blog",
-          "category": "DevOps",
+          "title": "Making Vulnerable Drivers Exploitable Without Hardware - The BYOVD Perspective",
+          "url": "https://thehackernews.com/2026/05/making-vulnerable-drivers-exploitable.html",
+          "source": "The Hacker News",
+          "category": "Seguridad",
           "priority": "high",
-          "score": 8,
-          "summary": "GitHub publishes updated guidance for safer CI/CD workflows.",
-          "whyItMatters": "CI/CD pipelines are a common attack surface.",
-          "recommendedAction": "Audit workflow permissions and third-party actions."
+          "score": 9,
+          "summary": "Este artículo analiza técnicamente cómo los controladores de modo kernel de Windows pueden ser interactuados desde el modo de usuario sin el hardware para el que fueron desarrollados. Esto es relevante para la investigación de vulnerabilidades y la evaluación de la explotabilidad de hallazgos de seguridad.",
+          "whyItMatters": "Comprender cómo se pueden explotar vulnerabilidades en drivers, incluso sin hardware específico, es crucial para identificar y mitigar riesgos de seguridad en sistemas Windows. Permite a los desarrolladores y profesionales de seguridad anticipar y defenderse contra ataques que aprovechan estas debilidades.",
+          "recommendedAction": "Revisa las prácticas de desarrollo de drivers para asegurar la robustez y la falta de vulnerabilidades. Mantén actualizados los sistemas operativos y los drivers, y considera herramientas de análisis de seguridad para identificar posibles puntos débiles."
         },
         {
-          "title": "PostgreSQL performance tips for growing applications",
-          "url": "https://example.com/postgresql-performance-tips",
-          "source": "InfoQ",
-          "category": "Database",
-          "priority": "medium",
-          "score": 7,
-          "summary": "A practical overview of indexing and query planning improvements for PostgreSQL apps.",
-          "whyItMatters": "Database performance often becomes a bottleneck as projects grow.",
-          "recommendedAction": "Review indexes and slow queries in development databases."
+          "title": "Anti-DDoS Firm Heaped Attacks on Brazilian ISPs",
+          "url": "https://krebsonsecurity.com/2026/04/anti-ddos-firm-heaped-attacks-on-brazilian-isps/",
+          "source": "Krebs on Security",
+          "category": "Seguridad",
+          "priority": "high",
+          "score": 9,
+          "summary": "Una empresa brasileña especializada en protección contra ataques DDoS fue descubierta facilitando una botnet responsable de campañas masivas de ataques DDoS contra otros operadores de red en Brasil. El CEO de la firma afirma que la actividad maliciosa fue el resultado de una brecha de seguridad, posiblemente obra de un competidor.",
+          "whyItMatters": "Este incidente revela la complejidad de la seguridad en el ecosistema de la protección DDoS y cómo las herramientas de defensa pueden ser mal utilizadas. Subraya la importancia de la diligencia debida y la seguridad interna para las empresas que ofrecen servicios de seguridad.",
+          "recommendedAction": "Evalúa la confiabilidad y las prácticas de seguridad de los proveedores de servicios de ciberseguridad. Mantente informado sobre las tácticas empleadas en ataques DDoS y asegúrate de tener planes de mitigación adecuados en tu infraestructura."
         }
       ]
     }
